@@ -1,3 +1,17 @@
+--bg-color-1: #9db3ed;
+--bg-color-2: #f9f9f9;
+--text-color-1: #0b1537;
+--text-color-2: #636363;
+
+
+--bg-color-1: #172d67;
+--bg-color-2: #050c26;
+--text-color-1: #fbfcfc;
+--text-color-2: #bbbcbc;
+
+
+
+
 .app {
   background: #2a6c84;
   min-height: 100vh;
@@ -13,6 +27,13 @@
   box-shadow: 1px -1px 20px rgba(0, 0, 0, 0.15);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.app_calculator_navbar img {
+  height: 24px;
+  width: 24px;
 }
 
 .app_calculator_navbar {
@@ -24,6 +45,9 @@
   background-color: transparent;
   min-height: 40px;
   padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .app_calculator_navbar_toggle {

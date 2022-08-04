@@ -1,14 +1,16 @@
---bg-color-1: #9db3ed;
---bg-color-2: #f9f9f9;
---text-color-1: #0b1537;
---text-color-2: #636363;
+.app {
+  --bg-color-1: #9db3ed;
+  --bg-color-2: #f9f9f9;
+  --text-color-1: #0b1537;
+  --text-color-2: #636363;
+}
 
-
---bg-color-1: #172d67;
---bg-color-2: #050c26;
---text-color-1: #fbfcfc;
---text-color-2: #bbbcbc;
-
+.app[data-theme="dark"] {
+  --bg-color-1: #172d67;
+  --bg-color-2: #050c26;
+  --text-color-1: #fbfcfc;
+  --text-color-2: #bbbcbc;
+}
 
 
 

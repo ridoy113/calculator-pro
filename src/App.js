@@ -9,7 +9,7 @@ import KeyPad from './components/keypad/KeyPad';
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   return (
-    <div className="app">
+    <div className="app" data-theme={isDarkMode ? "dark" : ""}>
       <div className='app_calculator'>
         <div className='app_calculator_navbar'>
           <div

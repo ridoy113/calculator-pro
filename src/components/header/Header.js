@@ -1,8 +1,16 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 import './Header.css'
 
 
-const Header = () => {
+const Header = (props) => {
+    const resultRef = useRef();
+
+    useEffect(() => {
+        resultRef.current.scrollIntoView()
+    }, [])
+
     return (
         <div className='header custom-scroll'>
             <div className='header_history'>
@@ -20,9 +28,9 @@ const Header = () => {
             <br />
 
             <div className='header_expression custom-scroll'>
-                <p>10+11+2</p>
+                <p>{props.expression}</p>
             </div>
-            <p className='header_result'>23</p>
+            <p ref={resultRef} className='header_result'>{props.result}</p>
         </div>
     );
 };

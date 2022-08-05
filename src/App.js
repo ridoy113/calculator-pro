@@ -7,9 +7,17 @@ import KeyPad from './components/keypad/KeyPad';
 
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleKeyPress = (keyCode, key) => {
+    console.log(keyCode, key);
+  }
+
   return (
-    <div className="app" data-theme={isDarkMode ? "dark" : ""}>
+    <div className="app"
+      tabIndex="0"
+      onKeyDown={(event) => handleKeyPress(event.keyCode, event.key)}
+      data-theme={isDarkMode ? "dark" : ""}>
       <div className='app_calculator'>
         <div className='app_calculator_navbar'>
           <div

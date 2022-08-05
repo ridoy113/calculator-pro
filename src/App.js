@@ -20,6 +20,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [expression, setExpression] = useState("");
   const [result, setResult] = useState("");
+  const [history, setHistory] = useState([]);
 
 
   const handleKeyPress = (keyCode, key) => {
@@ -64,12 +65,21 @@ function App() {
     else if (keyCode === 13) {
       if (!expression) return
       calculateResult(expression);
+
+      const tempHistory = [...history]
+      if (tempHistory.length > 20) tempHistory = tempHistory.slice(0, 1);
+
+      tempHistory.push(expression);
+      setHistory(tempHistory);
     }
   };
 
 
   const calculateResult = (exp) => {
-    if (!exp) return;
+    if (!exp) {
+      setResult("");
+      return
+    };
     const lastCar = exp.slice(-1);
     if (!numbers.includes(lastCar)) exp = exp.slice(0, -1)
 
@@ -98,7 +108,7 @@ function App() {
           <img src={isDarkMode ? moonIcon : sunIcon} alt="" />
         </div>
 
-        <Header expression={expression} result={result} />
+        <Header expression={expression} result={result} history={history} />
         <KeyPad handleKeyPress={handleKeyPress} />
       </div>
     </div>
